@@ -14,7 +14,7 @@ export const LocationCard = ({ location }: locationProps) => {
           <img
             src={`https://cdn.thesimpsonsapi.com/500${location.image_path}`}
             alt={location.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-500"
           />
         </div>
       </div>

@@ -11,7 +11,7 @@ import { TheSimpsonApi } from "./routes/TheSimpsonApi";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/the-simpson-blog">
         <Routes>
           <Route index element={<Home />} />
           <Route path="/personajes" element={<Personajes />} />

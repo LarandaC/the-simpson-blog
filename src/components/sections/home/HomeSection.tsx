@@ -1,4 +1,5 @@
 import { InfoSection } from "./InfoSection";
+import bg from "../../../assets/bg.jpg";
 
 export const HomeSection = () => {
   return (
@@ -8,7 +9,7 @@ export const HomeSection = () => {
     >
       <div className="absolute inset-0 flex justify-center">
         <img
-          src="/assets/fondo.jpg"
+          src={bg}
           alt="Imagen de fondo"
           className="w-full h-[80vh] object-cover rounded-b-[5rem]"
         />
