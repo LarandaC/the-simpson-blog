@@ -26,7 +26,7 @@ export const HomeSection = () => {
         </h1>
         <a
           href="#populares"
-          className="px-6 py-3 font-bold cursor-pointer btn-more hover:bg-yellow hover:text-text "
+          className="px-6 py-3 font-bold cursor-pointer btn-more hover:bg-yellow hover:text-text rounded-full "
         >
           Comenzar
         </a>

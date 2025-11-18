@@ -62,7 +62,7 @@
     --font-luckiest-guy: "Luckiest Guy", sans-serif;
 
     --background: #f0f9ff;
-    --border: #f6f6f6;
+    --border: #e6e6e6;
     --text: #1e1e1e;
     --subtext: #2f2f2f;
     --foreground: #656565;
@@ -123,7 +123,7 @@
 }
 
 @utility btn-more {
-  @apply bg-text text-white rounded-full hover:scale-105 transition-colors duration-300;
+  @apply bg-text text-white hover:scale-105 transition-colors duration-300;
 }
 
 #root {

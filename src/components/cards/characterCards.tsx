@@ -12,13 +12,13 @@ export const CharacterCards = ({ character, index }: phraseProps) => {
     character.phrases?.[phraseIndex - 1] ?? character.phrases?.[0] ?? null;
 
   return (
-    <div className="group bg-white rounded-xl overflow-hidden shadow-sm flex flex-col w-64 shadow-text/15 card-hover">
-      <div className="mt-12 relative">
-        <div className="w-32 h-32 mx-auto overflow-hidden">
+    <div className="group border border-border bg-white rounded-xl overflow-hidden shadow-sm flex flex-col w-64 shadow-text/15 card-hover">
+      <div className="relative pb-2">
+        <div className="w-40 h-40 mx-auto overflow-hidden mt-2">
           <img
             src={`https://cdn.thesimpsonsapi.com/500${character.portrait_path}`}
             alt={character.name}
-            className="w-full h-full object-cover transition-transform duration-500"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
       </div>
@@ -42,13 +42,13 @@ export const CharacterCards = ({ character, index }: phraseProps) => {
 
           <div className="mt-4 flex flex-wrap gap-2 justify-center">
             {character.age !== null && character.age !== undefined && (
-              <span className="rounded-full border border-foreground/80 px-3 py-1 text-[11px] font-semibold">
+              <span className="flex items-center gap-1 rounded-full bg-blue-50 border border-blue-800 text-blue-800 px-3 py-1 text-xs font-medium">
                 Edad: {character.age}
               </span>
             )}
 
             <span
-              className={`rounded-full border px-3 py-1 text-[11px] font-semibold ${
+              className={`flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-medium ${
                 character.status === "Alive"
                   ? "border-green-700 bg-green-700/15 text-green-700"
                   : character.status === "Deceased"

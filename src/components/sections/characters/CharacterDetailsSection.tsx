@@ -1,33 +1,27 @@
-import { BriefcaseBusiness, Cake, Users, Calendar } from "lucide-react";
-import { useCharacterDetails } from "../hooks/useCharacterDetails";
-
-const DetailItem = ({
-  label,
-  value,
-  icon: Icon,
-}: {
-  label: string;
-  value: string | number;
-  icon: React.ElementType; // para aceptar un componente React
-}) => (
-  <div className="flex items-center text-lg bg-yellow-50 p-3 rounded-lg border-l-4 border-yellow shadow-sm transition hover:shadow-md">
-    <span className="mr-3 text-2xl text-yellow-700">
-      <Icon size={24} />
-    </span>
-    <p className="flex flex-col sm:flex-row sm:gap-1">
-      <span className="font-semibold text-text">{label}:</span>
-      <span className="text-text font-medium break-words">{value}</span>
-    </p>
-  </div>
-);
+import {
+  BriefcaseBusiness,
+  Cake,
+  Users,
+  Calendar,
+  ArrowLeft,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useCharacterDetails } from "../../hooks/useCharacterDetails";
+import { DetailItem } from "../../elements/DetailItem";
 
 export const CharacterDetailsSection = () => {
   // hooks
   const { character, loading, error } = useCharacterDetails();
+  const navigate = useNavigate();
+
+  // Función para volver a la lista de personajes
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   if (loading) {
     return (
-      <div className="text-center p-20 text-3xl font-luckiest-guy text-yellow-600 animate-pulse">
+      <div className="text-center p-20 text-3xl font-luckiest-guy text-text animate-pulse">
         Cargando detalles de personaje...
       </div>
     );
@@ -50,24 +44,35 @@ export const CharacterDetailsSection = () => {
   }
 
   return (
-    <section className="container max-w-6xl mx-auto px-4 pt-14 pb-6">
-      <div className="bg-white rounded-2xl shadow-xl p-8 border-t-[12px] border-yellow flex flex-col lg:flex-row gap-10 mt-8">
+    <section className="container max-w-6xl mx-auto px-6 xl:px-5 pt-24 pb-10">
+      <div className="mb-4 flex justify-start">
+        <button
+          onClick={handleGoBack}
+          className="px-6 py-2 flex gap-2 items-center rounded-lg font-bold cursor-pointer btn-more transition duration-150 ease-in-out"
+          aria-label="Volver a la lista de personajes"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          Volver a la lista
+        </button>
+      </div>
+
+      <div className="bg-white border border-border/60 p-8 flex flex-col lg:flex-row gap-10 mt-8 rounded-xl shadow-lg ">
         <div className="w-full lg:w-1/3 flex-shrink-0 flex flex-col items-center">
-          <h1 className="text-4xl sm:text-5xl font-luckiest-guy text-text tracking-wider text-center leading-none mb-6">
+          <h1 className="text-3xl sm:text-4xl font-luckiest-guy text-text tracking-wider text-center leading-none mb-6">
             {character.name}
           </h1>
 
           <img
-            src={`https://cdn.thesimpsonsapi.com/500${character.portrait_path}`}
+            src={`https://cdn.thesimpsonsapi.com/200${character.portrait_path}`}
             alt={`Retrato de ${character.name}`}
-            className="w-full h-auto max-h-96 object-contain rounded-xl border-4 border-yellow p-2 bg-yellow-50 shadow-lg"
+            className="w-full h-80 object-contain rounded-xl p-2"
           />
           <p className="pt-6">{character.description}</p>
         </div>
 
         <div className="w-full lg:w-2/3 space-y-8">
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-text pb-2">
+            <h2 className="text-xl font-semibold text-text/90 pb-2">
               Información de Personaje
             </h2>
 
@@ -98,7 +103,7 @@ export const CharacterDetailsSection = () => {
 
           {character.phrases && character.phrases.length > 0 && (
             <div className="pt-4">
-              <h3 className="text-2xl font-semibold mb-3 text-text">
+              <h3 className="text-xl font-semibold mb-3 text-text/90">
                 Lo que dijo alguna vez...
               </h3>
               <ul className="list-none space-y-3 pl-4 text-left">

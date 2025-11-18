@@ -1,17 +1,16 @@
 import { Footer } from "../components/elements/Footer";
 import { NavBar } from "../components/elements/NavBar";
-import { CharacterDetailsSection } from "../components/sections/characters/CharacterDetailsSection";
+import { EpisodeSection } from "../components/sections/episode/EpisodeSection";
 
-export const PersonajeDetalle = () => {
+export const Episode = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
-
       {/*Navbar*/}
       <NavBar />
 
       {/*Main Section*/}
       <main className="flex-grow">
-        <CharacterDetailsSection />
+        <EpisodeSection />
       </main>
 
       {/*Footer*/}

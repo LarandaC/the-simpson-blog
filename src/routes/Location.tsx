@@ -1,8 +1,8 @@
 import { Footer } from "../components/elements/Footer";
 import { NavBar } from "../components/elements/NavBar";
-import { CharacterDetailsSection } from "../components/sections/characters/CharacterDetailsSection";
+import { LocationSection } from "../components/sections/location/LocationSection";
 
-export const PersonajeDetalle = () => {
+export const Location = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
 
@@ -11,7 +11,7 @@ export const PersonajeDetalle = () => {
 
       {/*Main Section*/}
       <main className="flex-grow">
-        <CharacterDetailsSection />
+        <LocationSection />
       </main>
 
       {/*Footer*/}

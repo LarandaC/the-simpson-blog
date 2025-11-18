@@ -1,5 +1,5 @@
 import { Search } from "lucide-react";
-import { Dropdown } from "../elements/Dropdown";
+import { Dropdown } from "../../elements/Dropdown";
 
 interface CharacterFiltersProps {
   searchTerm: string;
@@ -47,7 +47,7 @@ export const CharacterFilters = ({
       {/*Limpiar */}
       <button
         onClick={handleClearFilters}
-        className="px-4 py-2 bg-yellow text-text hover:bg-yellow-400 rounded-md text-sm font-bold cursor-pointer transition duration-150 ease-in-out"
+        className="px-6 py-2 rounded-lg font-bold cursor-pointer btn-more transition duration-150 ease-in-out"
       >
         Limpiar filtros
       </button>

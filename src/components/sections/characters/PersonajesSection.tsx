@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { useCharacters } from "../hooks/useCharacters";
-import { CharacterCards } from "../cards/characterCards";
+import { useCharacters } from "../../hooks/useCharacters";
+import { CharacterCards } from "../../cards/characterCards";
 import { CharacterFilters } from "./CharactersFilters";
-import { CharacterPagination } from "./CharacterPagination";
-import type { Character } from "../../types/Character";
+import { Pagination } from "../../elements/Pagination";
+import type { Character } from "../../../types/Character";
 
 export const PersonajesSection = () => {
   const [page, setPage] = useState(1);
@@ -25,7 +25,7 @@ export const PersonajesSection = () => {
     setSelected("Estado");
   };
 
-  // Lógica de filtrado en el cliente (Client-Side Filtering)
+  // filtrado
   const filteredCharacters = useMemo(() => {
     if (!data?.results || data.results.length === 0) return [];
     let currentResults: Character[] = data.results;
@@ -95,7 +95,7 @@ export const PersonajesSection = () => {
 
       {/* Paginacion */}
       {shouldShowPagination && (
-        <CharacterPagination
+        <Pagination
           page={page}
           totalPages={data?.pages ?? page}
           hasNextPage={!!data?.next}

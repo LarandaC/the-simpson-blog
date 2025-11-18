@@ -17,7 +17,7 @@ export const Footer = () => {
         The Simpsons API
       </a>
       <a
-        href="#hero"
+        href=""
         onClick={scrollToTop}
         className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-white transition-colors"
       >

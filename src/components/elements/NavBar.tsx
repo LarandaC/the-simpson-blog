@@ -7,6 +7,7 @@ const links = [
   { to: "/", label: "Inicio", exact: true },
   { to: "/personajes", label: "Personajes" },
   { to: "/lugares", label: "Lugares" },
+  { to: "/episodios", label: "Episodios" },
   { to: "/the-simpsons-api", label: "The Simpsons API" },
 ];
 

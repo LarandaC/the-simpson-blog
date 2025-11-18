@@ -1,5 +1,5 @@
-import { useCharacters } from "../hooks/useCharacters";
-import { CharacterCards } from "../cards/characterCards";
+import { useCharacters } from "../../hooks/useCharacters";
+import { CharacterCards } from "../../cards/characterCards";
 
 export const PersonajesPopularesSection = () => {
   const { data, loading } = useCharacters(1);
